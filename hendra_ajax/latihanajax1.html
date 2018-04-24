@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<title>latihan AJAX1.html</title>
+<head>
+<script>function loadXMLDoc() {
+  var xmlhttp;
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    xmlhttp = new XMLHttpRequest();
+    } else {
+    // code for IE6, IE5
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      document.getElementById("nama, nim, alamat").innerHTML = xmlhttp.responseText;
+
+
+    }
+  }
+  xmlhttp.open("GET", "text1.xml", true);
+  xmlhttp.send();
+}
+</script>
+</head>
+<body>
+  <div id="nama, nim, alamat">
+    <h2>kalimat utama sebelum diubah</h2></div>
+<button type="button" onclick="loadXMLDoc()">ubah tulisan diatas</button>
+</body>
+
+</html>
